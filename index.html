@@ -150,6 +150,7 @@
         if (correctAnswer.includes(userInput)) {
           resultSpan.innerHTML = "✅ Correct!";
           resultSpan.className = "result correct";
+          window.location.href = "finish.html";
         } else {
           resultSpan.innerHTML = "❌ Wrong!";
           resultSpan.className = "result wrong";
@@ -158,6 +159,7 @@
         if (userInput === correctAnswer) {
           resultSpan.innerHTML = "✅ Correct!";
           resultSpan.className = "result correct";
+          window.location.href = "finish.html";
         } else {
           resultSpan.innerHTML = "❌ Wrong!";
           resultSpan.className = "result wrong";

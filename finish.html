@@ -68,8 +68,10 @@
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
       <div class="container d-flex flex-column align-items-center text-center">
-        <p data-aos="fade-up" data-aos-delay="200">Test your knowledge and see if you can uncover the secrets!</p>
-        <div id="quiz-content"></div>
+        <p style="font-size: 100px; text-align: center;">✅</p>
+
+        <h2>Correct answer</h2>
+        <p>good job buddy :></p>
       </div>
 
     </section><!-- /Hero Section -->
@@ -117,56 +119,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <!-- Quiz Script -->
-  <script>
-    const questions = [
-      { question: "What is the name of the Forgotten Realm?", answer: "Kodokuna" },
 
-    ];
-
-    function loadQuiz() {
-      const container = document.getElementById("quiz-content");
-      questions.forEach((q, index) => {
-        const div = document.createElement("div");
-        div.classList.add("question-box");
-        div.innerHTML = `
-          <h2 data-aos="fade-up" data-aos-delay="100">${q.question}</h2>
-                  <br><br>
-          <input type="text" class="form-control d-inline-block w-50" id="answer-${index}" placeholder="Type your answer...">
-          <br>
-          <br>
-          <button class="btn btn-warning btn-sm" onclick="checkAnswer(${index})">Check</button>
-          <span id="result-${index}" class="result"></span>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function checkAnswer(index) {
-      const userInput = document.getElementById(`answer-${index}`).value.trim();
-      const correctAnswer = questions[index].answer;
-      const resultSpan = document.getElementById(`result-${index}`);
-
-      if (Array.isArray(correctAnswer)) {
-        if (correctAnswer.includes(userInput)) {
-          resultSpan.innerHTML = "✅ Correct!";
-          resultSpan.className = "result correct";
-        } else {
-          resultSpan.innerHTML = "❌ Wrong!";
-          resultSpan.className = "result wrong";
-        }
-      } else {
-        if (userInput === correctAnswer) {
-          resultSpan.innerHTML = "✅ Correct!";
-          resultSpan.className = "result correct";
-        } else {
-          resultSpan.innerHTML = "❌ Wrong!";
-          resultSpan.className = "result wrong";
-        }
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", loadQuiz);
-  </script>
 </body>
 
 </html>
